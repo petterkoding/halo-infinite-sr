@@ -46,7 +46,7 @@ const index = () => {
                 </motion.h2>
 
                 <p className="text-white mt-16">
-                    I've been playing since Halo 2 was released.
+                    I&apos;ve been playing since Halo 2 was released.
                 </p>
                 <p className="text-white mt-1">
                     I made this because I love the game and building things.
