@@ -49,7 +49,7 @@ const index = () => {
                     I've been playing since Halo 2 was released.
                 </p>
                 <p className="text-white mt-1">
-                    I made this APP because I love the game and building things.
+                    I made this because I love the game and building things.
                 </p>
             </div>
 
