@@ -87,10 +87,10 @@ function playerId({serviceRecord, playerAppearance}) {
 
         
             <Card title="precision" Icon={XCircleIcon} iconColor="pink-400" x={-4} delay={1.85}>
-              <Table name="Accurary" data={`${serviceRecord.data.core.shots.accuracy.toFixed(2)}%`} />
+              <Table name="Accuracy" data={`${serviceRecord.data.core.shots.accuracy.toFixed(2)}%`} />
               <Table name="shots fired" data={serviceRecord.data.core.shots.fired} />
-              <Table name="shot missed" data={serviceRecord.data.core.shots.missed}/>
-              <Table name="avg dmg" data={serviceRecord.data.core.damage.average}/>
+              <Table name="shots missed" data={serviceRecord.data.core.shots.missed}/>
+              <Table name="avgerage damage" data={serviceRecord.data.core.damage.average}/>
             </Card>
 
           </motion.div>
