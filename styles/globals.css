@@ -15,7 +15,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   height: 100%;
   z-index: 10;
   font-family: 'Source Sans Pro', sans-serif;
@@ -30,6 +30,7 @@ body::after{
   background: #00000085;
   top: 0;
   z-index: -1;
+  pointer-events: none;
 }
 
 
