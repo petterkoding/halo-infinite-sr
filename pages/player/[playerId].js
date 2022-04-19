@@ -25,7 +25,7 @@ function playerId({serviceRecord, playerAppearance}) {
   return (
     <>
         <Head title={`Halo Infinite Stats | ${GT}`}/>
-        <main className="max-w-7xl mx-auto p-2 mt-7 min-h-[80vh]">
+        <div className="max-w-7xl mx-auto p-2 mt-7 min-h-[80vh]">
           <motion.div
             initial={{opacity: 1}}
             animate={{opacity: 1}}
@@ -135,7 +135,7 @@ function playerId({serviceRecord, playerAppearance}) {
             </div>
           </motion.div>
 
-        </main>
+        </div>
     </>
   )
 }

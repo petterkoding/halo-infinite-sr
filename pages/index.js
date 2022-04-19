@@ -31,8 +31,8 @@ export default function Home() {
   return (
     <>
       <Head title="Halo Infinite Stats | Home"/>
-      <main className="w-full flex flex-col p-2 h-[80vh] mt-3">
-        <div className="max-w-7xl mx-auto w-full flex flex-col flex-start items-center mt-40 h-[25rem] md:h-[30rem]">
+      <div className="w-full p-2 mt-3">
+        <div className="max-w-7xl mx-auto w-full flex flex-col flex-start items-center mt-40 h-auto">
           <motion.h1
           initial={{opacity: 0, y: 10}}
           animate={{opacity: 1, y: 0}}
@@ -68,7 +68,7 @@ export default function Home() {
           )}
 
         </div>       
-      </main>
+      </div>
     </>
   )
 }

@@ -2,17 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  background: rgb(1, 5, 27);
+*{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(1, 5, 27);
   position: relative;
   background: url('../public/haloring.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   height: 100%;
   z-index: 10;
   font-family: 'Source Sans Pro', sans-serif;

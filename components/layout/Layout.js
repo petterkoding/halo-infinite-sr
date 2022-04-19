@@ -1,12 +1,14 @@
 import Nav from "../nav/Nav"
-import Credits from "../credits/Credits"
+import Footer from "../footer/Footer"
 
 const Layout = ({children}) => {
   return (
     <>
         <Nav/>
-        {children}
-        <Credits/>
+          <main className="min-h-screen">
+            {children}
+          </main>
+        <Footer/>
     </>
   )
 }
