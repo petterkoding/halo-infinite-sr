@@ -31,8 +31,7 @@ export default function Home() {
   return (
     <>
       <Head title="Halo Infinite Stats | Home"/>
-      <div className="w-full p-2 mt-3">
-        <div className="max-w-7xl mx-auto w-full flex flex-col flex-start items-center mt-40 h-auto">
+      <div className="max-w-7xl mx-auto w-full flex flex-col flex-start items-center mt-40 h-auto px-2">
           <motion.h1
           initial={{opacity: 0, y: 10}}
           animate={{opacity: 1, y: 0}}
@@ -65,10 +64,8 @@ export default function Home() {
                 {errors.searchForPlayer && <p className="text-white text-xs mt-1 p-1">Required field: Please enter a gamertag</p>}
               </fieldset>
             </form>  
-          )}
-
-        </div>       
-      </div>
+        )}
+      </div>       
     </>
   )
 }

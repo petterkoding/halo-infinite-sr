@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const Loading = ({text}) => {
   return (
-    <div className="w-full h-screen flex flex-col items-center mt-52">
+    <div className="w-full h-auto flex flex-col items-center mt-40">
         <CubeTransparentIcon className="h-7 w-7 text-white transition duration-100 ease-linear my-3 animate-pulse"/>
         <motion.span
             initial={{x: 7}}

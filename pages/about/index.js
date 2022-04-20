@@ -28,8 +28,8 @@ const index = () => {
   return (
     <>
         <Head title="About InfiniteSR"/>
-        <main className="w-full flex flex-col p-2 max-w-7xl mx-auto mt-7">
-            <div className="w-full flex flex-col justify-center items-center h-[25rem] md:h-[30rem]">
+        <div className="mt-40 w-full flex flex-col flex-start  max-w-7xl mx-auto px-2">
+            <div className="w-full flex flex-col items-center flex-start h-auto">
                 <motion.h1
                     initial={{opacity: 0, y: 10}}
                     animate={{opacity: 1, y: 0}}
@@ -41,21 +41,25 @@ const index = () => {
                     initial={{opacity: 0}}
                     animate={{opacity: 1}}
                     transition={{duration: 2}}
-                    className="text-xl text-white">
-                        Gaming x new tech
+                    className="text-xl text-white capitalize">
+                        gaming x frontend
                 </motion.h2>
 
-                <p className="text-white mt-16">
-                    I&apos;ve been playing since Halo 2 was released.
+                
+                <p className="text-white my-16 max-w-[600px] leading-relaxed">
+                    I&apos;ve played a lot of Halo growing up in the 90s. I think its fair to say its one of my favorite games, ever.
+                    So why not combine it with a modern Frontend framework to create something useful?
                 </p>
-                <p className="text-white mt-1">
-                    I made this because I love the game and building things.
+                <p className="text-white max-w-[600px] leading-relaxed">
+                    I created this because Im a Halo fan and I like to build new things.
+                    It was a fun mini project because it meant something to me. 
+                
                 </p>
             </div>
 
 
-            <div className="mx-auto h-[25vh] group">
-                <h3 className="font-bold text-xl text-white mb-2">Tech stack</h3>
+            <div className="mx-auto h-auto mt-20 group">
+                <h3 className="font-bold text-xl text-white mb-2">Tech used</h3>
                 <motion.ul 
                     variants={container}
                     initial="hidden"
@@ -68,9 +72,12 @@ const index = () => {
                     <motion.li className={styles.listItem} variants={item}>framer motion</motion.li>
                     <motion.li className={styles.listItem} variants={item}>hero icons</motion.li>
                 </motion.ul>
+
+
+                <span className="text-xs text-gray-300 mt-32 block bg-stone-900/60 text-center border border-indigo-400">This is a work in progress and will evolve over time.</span>
             </div>
 
-        </main>
+        </div>
     </>
   )
 }

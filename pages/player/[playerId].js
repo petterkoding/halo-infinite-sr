@@ -8,11 +8,13 @@ import Table from '../../components/records/Table';
 import { motion } from 'framer-motion'
 import Loading from '../../components/common/Loading';
 import ProgressBar from '../../components/records/ProgressBar';
+import Matchmaking from '../../components/records/Matchmaking';
 import Card from '../../components/records/Card';
 import PlayerNotFound from '../PlayerNotFound';
 
 function playerId({serviceRecord, playerAppearance}) {
 
+  console.log(serviceRecord)
 
     const GT = serviceRecord.additional?.gamertag
     const backdrop = playerAppearance.data?.backdrop_image_url
@@ -20,7 +22,6 @@ function playerId({serviceRecord, playerAppearance}) {
     const totalKills = serviceRecord.data?.core.summary.kills
 
     if(!GT || GT === undefined) return <PlayerNotFound/>
-    
     
   return (
     <>
@@ -39,7 +40,7 @@ function playerId({serviceRecord, playerAppearance}) {
             initial={{opacity: 0, y: 10}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 1.5, delay: 0.1}}
-            className="opacity-0 flex flex-col justify-start mb-16 bg-[url('https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2021/04/halo-infinite-watchdog-armor.png')] bg-no-repeat bg-top h-auto border-b border-b-slate-50/80 relative">
+            className="opacity-0 flex flex-col justify-start mb-10 bg-[url('https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2021/04/halo-infinite-watchdog-armor.png')] bg-no-repeat bg-top h-auto border-b border-b-slate-50/80 relative">
 
             <motion.div
               initial={{opacity: 0, x:-10}}
@@ -47,7 +48,7 @@ function playerId({serviceRecord, playerAppearance}) {
               transition={{duration: 1, delay: 1.5}}
               className="border border-slate-50/20 sm-w-full md:max-w-[19rem] h-18 mt-4 py-2 relative flex flex-row justify-around items-center border-x-white border-y-cyan-200 mb-16  bg-gradient-to-r from-sky-500 to-indigo-500">
               <div>
-                <h1 className="text-lg text-white uppercase font-bold">{GT}</h1>
+                <h1 className="text-2xl text-white uppercase font-bold">{GT}</h1>
                 <span className="text-md text-white/60">{servicetag}</span>
               </div>
               <div className="opacity-40 relative h-4/5 flex items-center">
@@ -77,7 +78,7 @@ function playerId({serviceRecord, playerAppearance}) {
             </Card>
 
 
-            <Card title="combact efficiency" Icon={LightningBoltIcon} iconColor="yellow-500" x={-6} delay={1.75}>
+            <Card title="combat efficiency" Icon={LightningBoltIcon} iconColor="yellow-500" x={-6} delay={1.75}>
               <Table name="kills" data={serviceRecord.data.core.summary.kills}/>
               <Table name="deaths" data={serviceRecord.data.core.summary.deaths}/>
               <Table name="assists" data={serviceRecord.data.core.summary.assists}/>
@@ -90,21 +91,18 @@ function playerId({serviceRecord, playerAppearance}) {
               <Table name="Accuracy" data={`${serviceRecord.data.core.shots.accuracy.toFixed(2)}%`} />
               <Table name="shots fired" data={serviceRecord.data.core.shots.fired} />
               <Table name="shots missed" data={serviceRecord.data.core.shots.missed}/>
-              <Table name="avgerage damage" data={serviceRecord.data.core.damage.average}/>
+              <Table name="average damage" data={serviceRecord.data.core.damage.average}/>
             </Card>
 
           </motion.div>
 
-          
+          <Matchmaking
+            matchesPlayed={serviceRecord.data.matches_played}
+            wins={serviceRecord.data.core.breakdowns.matches.wins}
+            losses={serviceRecord.data.core.breakdowns.matches.losses}
+            draws={serviceRecord.data.core.breakdowns.matches.draws}
+          />
 
-          <motion.div
-            initial={{opacity: 0, y: 15}}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{duration: 1.75, delay: 0.6}}
-            viewport={{ once: true }}
-            className="text-white text-1xl lg:text-2xl mt-2 mb-1 uppercase">
-              Tools of destruction
-            </motion.div>
 
           <Card title="Kills overall" Icon={FireIcon} iconColor="sky-400" x={-4} delay={0.8}>
             <ProgressBar name="headshots" p={serviceRecord.data.core.breakdowns.kills.headshots} total={totalKills}/>
@@ -120,7 +118,7 @@ function playerId({serviceRecord, playerAppearance}) {
             transition={{duration: 2, delay: 0.6}}
             viewport={{ once: true }}
           >
-            <h3 className="text-white text-1xl lg:text-2xl mb-1 uppercase">Medals</h3>
+            <h3 className="text-white text-1xl lg:text-2xl mb-1 uppercase">Medals earned</h3>
             <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
 
             {serviceRecord.data.core.breakdowns.medals.map(medal => (
