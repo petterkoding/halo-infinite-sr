@@ -14,7 +14,6 @@ import PlayerNotFound from '../PlayerNotFound';
 
 function playerId({serviceRecord, playerAppearance}) {
 
-  console.log(serviceRecord)
 
     const GT = serviceRecord.additional?.gamertag
     const backdrop = playerAppearance.data?.backdrop_image_url
@@ -61,6 +60,7 @@ function playerId({serviceRecord, playerAppearance}) {
               animate={{opacity: 1, x: 0}}
               transition={{duration: 1, delay: 1.5}}
               className="absolute  right-2 top-7 md:right-10">
+
               <div className="flex flex-col items-center">
                 <span className="text-white text-xs lg:text-sm">Win rate</span>
                 <div className="text-white font-bold text-2xl md:text-5xl block">{serviceRecord.data.win_rate.toFixed(2)}<span>%</span></div>
