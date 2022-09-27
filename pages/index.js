@@ -1,9 +1,11 @@
 import Head from '../components/head/Head'
 import { motion } from 'framer-motion'
-
 import SearchForm from '../components/form/SearchForm'
 
 export default function Home() {
+
+  const verNum = 1;
+  const verStr = "v";
 
   return (
     <>
@@ -13,18 +15,26 @@ export default function Home() {
             initial={{opacity: 0, y: 10}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 1}}
-            className="text-4xl font-bold mb-4 text-white uppercase">
-              Halo InfiniteSR 1.1
+            className="text-4xl lg:text-6xl font-bold mb-4 text-white uppercase">
+              Halo Infinite
+          
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">S</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-blue-700">R</span>
+         
+              <span className="ml-5 text-sm text-white/50">{verStr}</span>
+              <span className="text-sm text-white/50">{verNum}</span>
           </motion.h1>
           <motion.h2
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             transition={{duration: 2}}
-            className="text-xl text-white">
+            className="text-lg lg:text-xl text-white">
               Check your multiplayer Service Record
           </motion.h2>
           
-        <SearchForm/>
+        <div className="mt-12 w-full max-w-[600px]">
+          <SearchForm/>
+        </div>
       </div>       
     </>
   )

@@ -13,7 +13,7 @@ const custom404 = () => {
   return (
       <div className="transparent flex flex-col items-center mt-16 lg:mt-28 h-screen w-full">
 
-          <h1 className="text-2xl lg:text-4xl text-white uppercase">Spartan not found - 404</h1>
+          <h1 className="text-2xl lg:text-4xl text-white uppercase">Page not found - 404</h1>
 
           <div className="relative z-10">
 
