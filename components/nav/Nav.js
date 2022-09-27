@@ -16,7 +16,7 @@ function Nav() {
 
   const styled = {
     links: "px-3 py-1 font-bold text-sm border border-slate-50/60 mr-4 w-28 text-white uppercase hover:border-slate-50/100 hover:text-black/100 hover:bg-slate-200 transition duration-200",
-    active: "bg-slate-200 text-black"
+    active: "bg-slate-200/70 text-black"
   }
 
   
@@ -26,7 +26,7 @@ function Nav() {
 
   return (
     <>
-    <nav className="h-20 w-full p-5 border-b border-b-cyan-400 fixed top-0 z-10 bg-stone-900/80">
+    <nav className="h-20 w-full p-5 border-b border-b-cyan-400 fixed top-0 z-[99999] bg-stone-900/80">
         <div className="flex justify-between items-center max-w-7xl mx-auto">
             <div className="flex justify-start w-full max-w-md">
                 <Link href="/" passHref>
