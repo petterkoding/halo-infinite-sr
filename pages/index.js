@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <>
-      <Head title="Halo Infinite Stats | Home"/>
+      <Head title="Halo InfiniteSR | Search"/>
       <div className="max-w-7xl mx-auto w-full flex flex-col flex-start items-center mt-40 h-auto px-2">
           <motion.h1
           initial={{opacity: 0, y: 10}}

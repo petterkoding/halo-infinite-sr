@@ -27,7 +27,7 @@ const index = () => {
 
   return (
     <>
-        <Head title="About InfiniteSR"/>
+        <Head title="Halo InfiniteSR | About"/>
         <div className="mt-40 w-full flex flex-col flex-start  max-w-7xl mx-auto px-2">
             <div className="w-full flex flex-col items-center flex-start h-auto">
                 <motion.h1
