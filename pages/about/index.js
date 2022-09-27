@@ -41,20 +41,28 @@ const index = () => {
                     initial={{opacity: 0}}
                     animate={{opacity: 1}}
                     transition={{duration: 2}}
-                    className="text-xl text-white capitalize">
-                        gaming x frontend
+                    className="text-xl text-white">
+                        frontend x gamer
                 </motion.h2>
 
-                
-                <p className="text-white my-16 max-w-[600px] leading-relaxed">
-                    I&apos;ve played a lot of Halo growing up in the 90s. I think its fair to say its one of my favorite games, ever.
-                    So why not combine it with a modern Frontend framework to create something useful?
-                </p>
-                <p className="text-white max-w-[600px] leading-relaxed">
-                    I created this because Im a Halo fan and I like to build new things.
-                    It was a fun mini project because it meant something to me. 
-                
-                </p>
+                <div className="my-16">
+                    <h3 className="font-bold text-xl text-white mb-2">Background</h3>
+                    <p className="text-white max-w-[600px] leading-relaxed">
+                        I&apos;ve played a lot of Halo growing up. It&apos;s easy to say that it&apos;s my favorite game, ever.
+                        So why not combine it with a modern Frontend framework to create something useful?
+                    </p>
+                </div>
+
+                <div>
+                    <h4 className="text-xl capitalize font-bold text-white mb-2">as a developer</h4>
+                    <p className="text-white max-w-[600px] leading-relaxed">
+                        The whole experience was designed to reflect my ideas of how the actual games would translate into an app.
+                        By presenting the player stats in an UI that looks like the game itself and adding animations to the loading state and components.
+                        It was a fun mini project because it meant something to me. 
+                    
+                    </p>
+                </div>
+
             </div>
 
 
@@ -74,7 +82,9 @@ const index = () => {
                 </motion.ul>
 
 
-                <span className="text-xs text-gray-300 mt-32 block bg-stone-900/60 text-center border border-indigo-400">This is a work in progress and will evolve over time.</span>
+                <span className="text-xs text-gray-300 mt-32 block bg-stone-900/60 text-center border border-indigo-400">
+                    This is a work in progress and will evolve over time.
+                </span>
             </div>
 
         </div>
