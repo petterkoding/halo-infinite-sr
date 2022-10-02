@@ -18,7 +18,15 @@ const SearchForm = () => {
 
     const onSubmit = ({searchForPlayer}) => {
         setIsSearching(true) 
-        router.push(`/player/${searchForPlayer}`)
+        // router.push(`/player/${searchForPlayer}`)
+        router.push({
+            pathname: `/player/[gamertag]`,
+            query: { 
+                gamertag: searchForPlayer,
+                // season: 2,
+                // ranked: true
+            }
+        })
         
     }
 
@@ -38,7 +46,9 @@ const SearchForm = () => {
                             placeholder="Enter Gamertag"
                             {...register("searchForPlayer", { required:true, minLength: 1, maxLength: 15})}
                             />
-                        <button className="px-6 ml-1 h-full border w-auto border-slate-50/20 bg-slate-200/30 text-white uppercase 
+                        <button
+                            aria-label="search for gamer stats"
+                            className="px-6 ml-1 h-full border w-auto border-slate-50/20 bg-slate-200/30 text-white uppercase 
                             hover:bg-cyan-600/90 transition duration-200 ease-out">
                             go
                         </button>

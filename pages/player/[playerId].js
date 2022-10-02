@@ -12,18 +12,22 @@ import Matchmaking from '../../components/records/Matchmaking';
 import Card from '../../components/records/Card';
 import PlayerNotFound from '../PlayerNotFound';
 
-function playerId({serviceRecord, playerAppearance}) {
+function playerId({
+  serviceRecord,
+  playerAppearance,
+  allMedals
+}) {
 
-
-    const GT = serviceRecord.additional?.gamertag
-    const backdrop = playerAppearance.data?.backdrop_image_url
-    const servicetag = playerAppearance.data?.service_tag
-    const totalKills = serviceRecord.data?.core.summary.kills
+    const GT = serviceRecord?.additional?.parameters.gamertag
+    const backdrop = playerAppearance?.data?.backdrop_image_url
+    const servicetag = playerAppearance?.data?.service_tag
+    const totalKills = serviceRecord?.data?.core.summary.kills
 
     if(!GT || GT === undefined) return <PlayerNotFound/>
     
   return (
     <>
+    <h1>Hi</h1>
         <Head title={`Halo Infinite Stats | ${GT}`}/>
         <div className="max-w-7xl mx-auto p-2 mt-7 min-h-[80vh]">
           <motion.div
@@ -45,7 +49,7 @@ function playerId({serviceRecord, playerAppearance}) {
               initial={{opacity: 0, x:-10}}
               animate={{opacity: 1, x:0}}
               transition={{duration: 1, delay: 1.5}}
-              className="border border-slate-50/20 sm-w-full md:max-w-[19rem] h-18 mt-4 py-2 relative flex flex-row justify-around items-center border-x-white border-y-cyan-200 mb-16  bg-gradient-to-r from-sky-500 to-indigo-500">
+              className="border border-slate-50/20 sm-w-full max-w-[22rem] h-18 mt-4 py-2 relative flex flex-row justify-around items-center border-x-white border-y-cyan-200 mb-16  bg-gradient-to-r from-sky-500 to-indigo-500">
               <div>
                 <h1 className="text-2xl text-white uppercase font-bold">{GT}</h1>
                 <span className="text-md text-white/60">{servicetag}</span>
@@ -63,9 +67,9 @@ function playerId({serviceRecord, playerAppearance}) {
 
               <div className="flex flex-col items-center">
                 <span className="text-white text-xs lg:text-sm">Win rate</span>
-                <div className="text-white font-bold text-2xl md:text-5xl block">{serviceRecord.data.win_rate.toFixed(2)}<span>%</span></div>
-                <span className="text-white text-xs lg:text-sm mt-2">Total score</span>
-                <div className="text-white font-bold text-2xl md:text-4xl block">{serviceRecord.data.core.total_score}</div>
+                <div className="text-white font-bold text-2xl md:text-5xl block">{serviceRecord.data?.matches.win_rate.toFixed(2)}<span>%</span></div>
+                <span className="text-white text-xs lg:text-sm mt-2">Personal score</span>
+                <div className="text-white font-bold text-2xl md:text-4xl block">{serviceRecord.data.core.scores.personal}</div>
               </div>
             </motion.div>
 
@@ -97,11 +101,13 @@ function playerId({serviceRecord, playerAppearance}) {
           </motion.div>
 
           <Matchmaking
-            matchesPlayed={serviceRecord.data.matches_played}
-            wins={serviceRecord.data.core.breakdowns.matches.wins}
-            losses={serviceRecord.data.core.breakdowns.matches.losses}
-            draws={serviceRecord.data.core.breakdowns.matches.draws}
+            matchesPlayed={serviceRecord?.data.matches.total}
+            wins={serviceRecord?.data.matches?.outcomes.wins}
+            losses={serviceRecord?.data.matches?.outcomes.losses}
+            draws={serviceRecord?.data.matches?.outcomes.draws}
           />
+
+
 
 
           <Card title="Kills overall" Icon={FireIcon} iconColor="sky-400" x={-4} delay={0.8}>
@@ -120,13 +126,12 @@ function playerId({serviceRecord, playerAppearance}) {
           >
             <h3 className="text-white text-1xl lg:text-2xl mb-1 uppercase">Medals earned</h3>
             <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
-
-            {serviceRecord.data.core.breakdowns.medals.map(medal => (
+            {serviceRecord?.data.core.breakdowns.medals.map(medal => (
               <Medal
               key={medal.id}
-              name={medal.name}
-              src={medal.image_urls.small}
+              id={medal.id}
               count={medal.count}
+              data={allMedals?.data}
               />
               ))}
 
@@ -155,14 +160,19 @@ export async function getServerSideProps(ctx){
 
     const params = ctx.query.playerId
 
-  
-    const SERVICE_RECORD = await fetch(`https://halo.api.stdlib.com/infinite@0.3.9/stats/service-record/multiplayer/?gamertag=${params}`, options);
-    const APPEARANCE = await fetch(`https://halo.api.stdlib.com/infinite@0.3.9/appearance/?gamertag=${params}`, options);
 
-  
+    const SERVICE_RECORD = await fetch(`https://halo.api.stdlib.com/infinite@1.6.4/stats/players/service-record/multiplayer/matchmade/all/?gamertag=${params}`, options);
+    const APPEARANCE = await fetch(`https://halo.api.stdlib.com/infinite@1.6.4/appearance/players/spartan-id/?gamertag=${params}`, options);
+    const MEDALS = await fetch(`https://halo.api.stdlib.com/infinite@1.6.4/metadata/multiplayer/medals/`, options)
+    
     const serviceRecord = await SERVICE_RECORD.json();
-
     const playerAppearance = await APPEARANCE.json();
+    const allMedals = await MEDALS.json()
   
-    return { props: { serviceRecord, playerAppearance}}
-  }
+    return { props: {
+      serviceRecord,
+      playerAppearance,
+      allMedals
+      }
+    }
+}
