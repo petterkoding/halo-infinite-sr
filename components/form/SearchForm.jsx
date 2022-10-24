@@ -18,13 +18,10 @@ const SearchForm = () => {
 
     const onSubmit = ({searchForPlayer}) => {
         setIsSearching(true) 
-        // router.push(`/player/${searchForPlayer}`)
         router.push({
             pathname: `/player/[gamertag]`,
             query: { 
                 gamertag: searchForPlayer,
-                // season: 2,
-                // ranked: true
             }
         })
         

@@ -1,7 +1,5 @@
 import React from 'react'
 import Head from '../../components/head/Head';
-import Medal from '../../components/records/Medal';
-import Image from 'next/image'
 import {LightningBoltIcon, SparklesIcon} from '@heroicons/react/solid'
 import {XCircleIcon, FireIcon} from '@heroicons/react/outline'
 import Table from '../../components/records/Table';
@@ -13,21 +11,16 @@ import Card from '../../components/records/Card';
 import PlayerNotFound from '../PlayerNotFound';
 
 function playerId({
-  serviceRecord,
-  playerAppearance,
-  allMedals
+  serviceRecord
 }) {
 
     const GT = serviceRecord?.additional?.parameters.gamertag
-    const backdrop = playerAppearance?.data?.backdrop_image_url
-    const servicetag = playerAppearance?.data?.service_tag
     const totalKills = serviceRecord?.data?.core.summary.kills
 
     if(!GT || GT === undefined) return <PlayerNotFound/>
     
   return (
     <>
-    <h1>Hi</h1>
         <Head title={`Halo Infinite Stats | ${GT}`}/>
         <div className="max-w-7xl mx-auto p-2 mt-7 min-h-[80vh]">
           <motion.div
@@ -49,14 +42,8 @@ function playerId({
               initial={{opacity: 0, x:-10}}
               animate={{opacity: 1, x:0}}
               transition={{duration: 1, delay: 1.5}}
-              className="border border-slate-50/20 sm-w-full max-w-[22rem] h-18 mt-4 py-2 relative flex flex-row justify-around items-center border-x-white border-y-cyan-200 mb-16  bg-gradient-to-r from-sky-500 to-indigo-500">
-              <div>
-                <h1 className="text-2xl text-white uppercase font-bold">{GT}</h1>
-                <span className="text-md text-white/60">{servicetag}</span>
-              </div>
-              <div className="opacity-40 relative h-4/5 flex items-center">
-                <Image src={backdrop} alt="halo emblem backdrop" width="120" height="100" />
-              </div>
+              className="border border-slate-50/20 sm-w-full max-w-[18rem] h-18 mt-4 py-2 relative  border-x-white border-y-cyan-200 mb-16">
+                <h1 className="text-2xl text-white uppercase font-bold py-4 pl-3">{GT}</h1>
             </motion.div>
 
             <motion.div
@@ -117,26 +104,6 @@ function playerId({
             <ProgressBar name="power weapons" p={serviceRecord.data.core.breakdowns.kills.power_weapons}  total={totalKills}/>
           </Card>
           
-          
-          <motion.div
-            initial={{opacity: 0, y: 15}}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{duration: 2, delay: 0.6}}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-white text-1xl lg:text-2xl mb-1 uppercase">Medals earned</h3>
-            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
-            {serviceRecord?.data.core.breakdowns.medals.map(medal => (
-              <Medal
-              key={medal.id}
-              id={medal.id}
-              count={medal.count}
-              data={allMedals?.data}
-              />
-              ))}
-
-            </div>
-          </motion.div>
 
         </div>
     </>
@@ -162,17 +129,11 @@ export async function getServerSideProps(ctx){
 
 
     const SERVICE_RECORD = await fetch(`https://halo.api.stdlib.com/infinite@1.6.4/stats/players/service-record/multiplayer/matchmade/all/?gamertag=${params}`, options);
-    const APPEARANCE = await fetch(`https://halo.api.stdlib.com/infinite@1.6.4/appearance/players/spartan-id/?gamertag=${params}`, options);
-    const MEDALS = await fetch(`https://halo.api.stdlib.com/infinite@1.6.4/metadata/multiplayer/medals/`, options)
     
     const serviceRecord = await SERVICE_RECORD.json();
-    const playerAppearance = await APPEARANCE.json();
-    const allMedals = await MEDALS.json()
   
     return { props: {
-      serviceRecord,
-      playerAppearance,
-      allMedals
+      serviceRecord
       }
     }
 }

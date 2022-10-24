@@ -1,7 +1,5 @@
-import react from "react";
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { motion } from 'framer-motion'
 
 function Nav() {
 
@@ -20,9 +18,6 @@ function Nav() {
   }
 
   
-
-
-  const ref = react.createRef();
 
   return (
     <>
