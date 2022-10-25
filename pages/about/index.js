@@ -28,7 +28,7 @@ const index = () => {
   return (
     <>
         <Head title="Halo InfiniteSR | About"/>
-        <div className="w-full flex flex-col flex-start  max-w-7xl mx-auto px-2 mt-32">
+        <div className="w-full flex flex-col flex-start  max-w-7xl mx-auto px-2 mt-12">
             <div className="w-full flex flex-col items-center flex-start h-auto">
                 <motion.h1
                     initial={{opacity: 0, y: 10}}
