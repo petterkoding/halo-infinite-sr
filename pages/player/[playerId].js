@@ -17,6 +17,7 @@ function playerId({
     const GT = serviceRecord?.additional?.parameters.gamertag
     const totalKills = serviceRecord?.data?.core.summary.kills
 
+
     if(!GT || GT === undefined) return <PlayerNotFound/>
     
   return (
@@ -36,13 +37,15 @@ function playerId({
             initial={{opacity: 0, y: 10}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 1.5, delay: 0.1}}
-            className="opacity-0 flex flex-col justify-start mb-10 bg-[url('https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2021/04/halo-infinite-watchdog-armor.png')] bg-no-repeat bg-top h-auto border-b border-b-slate-50/80 relative">
+            className="opacity-0 flex flex-col justify-start mb-10
+            bg-[url('../public/infinite-splinter-desert.png')]
+            bg-no-repeat bg-top h-auto border-b border-b-slate-50/80 relative">
 
             <motion.div
               initial={{opacity: 0, x:-10}}
               animate={{opacity: 1, x:0}}
               transition={{duration: 1, delay: 1.5}}
-              className="sm-w-full max-w-[18rem] h-18 mt-4 py-2 mb-16">
+              className="sm-w-full max-w-[22rem] h-18 mt-4 py-2 mb-16">
                 <h1 className="text-4xl text-white uppercase font-bold">{GT}</h1>
             </motion.div>
 
@@ -60,7 +63,7 @@ function playerId({
               </div>
             </motion.div>
 
-            <Card title="matchmaking history" Icon={SparklesIcon} iconColor="violet-400" x={-8} delay={1.6}>
+            <Card title="matchmaking history" Icon={SparklesIcon} x={-8} delay={1.6}>
               <Table name="kills" data={serviceRecord.data.core.summary.kills}/>
               <Table name="deaths" data={serviceRecord.data.core.summary.deaths}/>
               <Table name="assists" data={serviceRecord.data.core.summary.assists}/>
@@ -69,7 +72,7 @@ function playerId({
             </Card>
 
 
-            <Card title="combat efficiency" Icon={LightningBoltIcon} iconColor="yellow-500" x={-6} delay={1.75}>
+            <Card title="combat efficiency" Icon={LightningBoltIcon} x={-6} delay={1.75}>
               <Table name="kills" data={serviceRecord.data.core.summary.kills}/>
               <Table name="deaths" data={serviceRecord.data.core.summary.deaths}/>
               <Table name="assists" data={serviceRecord.data.core.summary.assists}/>
@@ -78,7 +81,7 @@ function playerId({
             </Card>
 
         
-            <Card title="precision" Icon={XCircleIcon} iconColor="pink-400" x={-4} delay={1.85}>
+            <Card title="precision" Icon={XCircleIcon} x={-4} delay={1.85}>
               <Table name="Accuracy" data={`${serviceRecord.data.core.shots.accuracy.toFixed(2)}%`} />
               <Table name="shots fired" data={serviceRecord.data.core.shots.fired} />
               <Table name="shots missed" data={serviceRecord.data.core.shots.missed}/>
@@ -97,7 +100,7 @@ function playerId({
 
 
 
-          <Card title="Kills overall" Icon={FireIcon} iconColor="sky-400" x={-4} delay={0.8}>
+          <Card title="Kills overall" Icon={FireIcon} x={-4} delay={0.8}>
             <ProgressBar name="headshots" p={serviceRecord.data.core.breakdowns.kills.headshots} total={totalKills}/>
             <ProgressBar name="melee" p={serviceRecord.data.core.breakdowns.kills.melee} total={totalKills}/>
             <ProgressBar name="grenades" p={serviceRecord.data.core.breakdowns.kills.grenades} total={totalKills}/>
@@ -126,7 +129,6 @@ export async function getServerSideProps(ctx){
     }
 
     const params = ctx.query.playerId
-
 
     const SERVICE_RECORD = await fetch(`https://halo.api.stdlib.com/infinite@1.6.4/stats/players/service-record/multiplayer/matchmade/all/?gamertag=${params}`, options);
     

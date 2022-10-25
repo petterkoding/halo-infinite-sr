@@ -2,9 +2,9 @@ import { motion } from "framer-motion"
 
 const ProgressBar = ({name, p,  total}) => {
 
-    const divide = p / total
-    const multiply = divide * 100
-    const answer = Math.ceil(multiply)
+    const divideByTotal = p / total
+    const findPercentage = divideByTotal * 100
+    const percentageOfTotal = Math.ceil(findPercentage)
 
 
     const style = {
@@ -23,8 +23,8 @@ const ProgressBar = ({name, p,  total}) => {
             <div className="border border-white bg-slate-50/20 h-5 w-[20rem]">
                 <motion.div
                     initial={{ width: 0}}
-                    whileInView={{ width: `${answer}%`}}
-                    transition={{duration: 2, delay: 0.5}}
+                    whileInView={{ width: `${percentageOfTotal}%`}}
+                    transition={{duration: 2, delay: 0.2}}
                     className={style.bar}
                     viewport={{ once: true }}
                 >      
