@@ -12,7 +12,7 @@ const Card = ({children, title, Icon, x, delay}) => {
       className="block group w-full max-w-[30rem] mb-5">
 
         <h3
-          className="text-white text-2xl block bg-stone-900/80 border-t border-x border-cyan-400 p-1 capitalize">
+          className="text-white text-2xl block bg-stone-900/80 border-t border-x border-sky-600 p-1 capitalize">
           {title}
           <Icon className={`h-5 w-5 text-white inline ml-1 group-hover:text-yellow-500 transition duration-100 ease-linear mb-1`}/>
         </h3>

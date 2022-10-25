@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Head title="Halo InfiniteSR | Search"/>
-      <div className="max-w-7xl mx-auto w-full h-full flex flex-col flex-around items-center px-2 mt-12">
+      <div className="max-w-7xl mx-auto w-full h-full flex flex-col flex-around items-center px-2 mt-12 relative z-[99]">
         <motion.h1
             initial={{opacity: 0, y: 10}}
             animate={{opacity: 1, y: 0}}

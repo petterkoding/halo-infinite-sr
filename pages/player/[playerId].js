@@ -9,6 +9,7 @@ import ProgressBar from '../../components/records/ProgressBar';
 import Matchmaking from '../../components/records/Matchmaking';
 import Card from '../../components/records/Card';
 import PlayerNotFound from '../PlayerNotFound';
+import GamertagEmblem from '../../components/common/GamertagEmblem';
 
 function playerId({
   serviceRecord
@@ -41,13 +42,8 @@ function playerId({
             bg-[url('../public/infinite-splinter-desert.png')]
             bg-no-repeat bg-top h-auto border-b border-b-slate-50/80 relative">
 
-            <motion.div
-              initial={{opacity: 0, x:-10}}
-              animate={{opacity: 1, x:0}}
-              transition={{duration: 1, delay: 1.5}}
-              className="sm-w-full max-w-[22rem] h-18 mt-4 py-2 mb-16">
-                <h1 className="text-4xl text-white uppercase font-bold">{GT}</h1>
-            </motion.div>
+
+            <GamertagEmblem gamertag={GT}/>
 
             <motion.div
               initial={{opacity: 0, x: 10}}
@@ -63,18 +59,15 @@ function playerId({
               </div>
             </motion.div>
 
-            <Card title="matchmaking history" Icon={SparklesIcon} x={-8} delay={1.6}>
+            <Card title="overall" Icon={SparklesIcon} x={-8} delay={1.6}>
               <Table name="kills" data={serviceRecord.data.core.summary.kills}/>
               <Table name="deaths" data={serviceRecord.data.core.summary.deaths}/>
               <Table name="assists" data={serviceRecord.data.core.summary.assists}/>
-              <Table name="kdr" data={serviceRecord.data.core.kdr.toFixed(2)}/>
-              <Table name="kda" data={serviceRecord.data.core.kda.toFixed(2)}/>
             </Card>
 
 
             <Card title="combat efficiency" Icon={LightningBoltIcon} x={-6} delay={1.75}>
               <Table name="kills" data={serviceRecord.data.core.summary.kills}/>
-              <Table name="deaths" data={serviceRecord.data.core.summary.deaths}/>
               <Table name="assists" data={serviceRecord.data.core.summary.assists}/>
               <Table name="kdr" data={serviceRecord.data.core.kdr.toFixed(2)}/>
               <Table name="kda" data={serviceRecord.data.core.kda.toFixed(2)}/>
@@ -85,7 +78,7 @@ function playerId({
               <Table name="Accuracy" data={`${serviceRecord.data.core.shots.accuracy.toFixed(2)}%`} />
               <Table name="shots fired" data={serviceRecord.data.core.shots.fired} />
               <Table name="shots missed" data={serviceRecord.data.core.shots.missed}/>
-              <Table name="average damage" data={serviceRecord.data.core.damage.average}/>
+              <Table name="average damage" data={Math.round(serviceRecord.data.core.damage.average)}/>
             </Card>
 
           </motion.div>
