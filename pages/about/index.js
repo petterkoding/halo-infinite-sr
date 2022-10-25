@@ -28,13 +28,13 @@ const index = () => {
   return (
     <>
         <Head title="Halo InfiniteSR | About"/>
-        <div className="mt-40 w-full flex flex-col flex-start  max-w-7xl mx-auto px-2">
+        <div className="w-full flex flex-col flex-start  max-w-7xl mx-auto px-2 mt-32">
             <div className="w-full flex flex-col items-center flex-start h-auto">
                 <motion.h1
                     initial={{opacity: 0, y: 10}}
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 1}}
-                    className="text-4xl font-bold mb-4 text-white uppercase">
+                    className="text-4xl font-bold mb-4 text-white uppercase mt-32">
                         created by a player
                 </motion.h1>
                 <motion.h2
@@ -42,23 +42,24 @@ const index = () => {
                     animate={{opacity: 1}}
                     transition={{duration: 2}}
                     className="text-xl text-white">
-                        frontend x gamer
+                        dev x gamer
                 </motion.h2>
 
                 <div className="my-16">
-                    <h3 className="font-bold text-xl text-white mb-2">Background</h3>
+                    <h3 className="font-bold text-xl text-white mb-2 capitalize">gamer background</h3>
                     <p className="text-white max-w-[600px] leading-relaxed">
-                        I&apos;ve played a lot of Halo growing up. It&apos;s easy to say that it&apos;s my favorite game, ever.
-                        So why not combine it with a modern Frontend framework to create something useful?
+                        I&apos;ve played a lot of Halo growing up. It&apos;s easy to say that it&apos;s my favorite game. 
+                        Long story short, I made my own app for players to look up their service record stats.
                     </p>
                 </div>
 
                 <div>
                     <h4 className="text-xl capitalize font-bold text-white mb-2">as a developer</h4>
                     <p className="text-white max-w-[600px] leading-relaxed">
-                        The whole experience was designed to reflect my ideas of how the actual games would translate into an app.
-                        By presenting the player stats in an UI that looks like the game itself and adding animations to the loading state and components.
-                        It was a fun mini project because it meant something to me. 
+                        The app was designed to reflect on many years of gaming, but also to challenge me as a developer.
+                        For a project of this caliber. I decided to use a stack I was comfortable with.
+                        I saw the potential to animate stuff using framermotion and style it using tailwind.
+                        
                     
                     </p>
                 </div>

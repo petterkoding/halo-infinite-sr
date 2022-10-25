@@ -14,7 +14,7 @@ const Card = ({children, title, Icon, iconColor, x, delay}) => {
           {title}
           <Icon className={`h-5 w-5 text-white inline ml-1 group-hover:text-${iconColor} transition duration-100 ease-linear mb-1`}/>
         </h3>
-      <div className="border border-slate-50/20 px-3 py-3 bg-[#100f1f]/[.80] border-x-white w-full">
+      <div className="border border-slate-50/20 px-3 py-3 bg-black/40 border-x-white w-full">
 
         {children}
 

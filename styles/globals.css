@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,14 +11,9 @@
 }
 
 body, html {
-  background: rgb(1, 5, 27);
-  background: url('../public/haloring.jpg');
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background: rgb(20, 20, 20);
   height: 100%;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Kanit", sans-serif;
 }
 
 

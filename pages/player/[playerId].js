@@ -42,8 +42,8 @@ function playerId({
               initial={{opacity: 0, x:-10}}
               animate={{opacity: 1, x:0}}
               transition={{duration: 1, delay: 1.5}}
-              className="border border-slate-50/20 sm-w-full max-w-[18rem] h-18 mt-4 py-2 relative  border-x-white border-y-cyan-200 mb-16">
-                <h1 className="text-2xl text-white uppercase font-bold py-4 pl-3">{GT}</h1>
+              className="sm-w-full max-w-[18rem] h-18 mt-4 py-2 mb-16">
+                <h1 className="text-4xl text-white uppercase font-bold">{GT}</h1>
             </motion.div>
 
             <motion.div

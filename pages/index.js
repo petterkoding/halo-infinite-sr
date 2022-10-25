@@ -4,21 +4,21 @@ import SearchForm from '../components/form/SearchForm'
 
 export default function Home() {
 
-  const verNum = 1;
+  const verNum = 2;
 
   return (
     <>
       <Head title="Halo InfiniteSR | Search"/>
-      <div className="max-w-7xl mx-auto w-full flex flex-col flex-start items-center mt-40 h-auto px-2">
+      <div className="max-w-7xl mx-auto w-full flex flex-col flex-start items-center h-auto px-2 mt-32">
         <motion.h1
             initial={{opacity: 0, y: 10}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 1}}
-            className="text-4xl lg:text-6xl font-bold mb-4 text-white uppercase">
+            className="text-4xl lg:text-6xl font-bold mb-4 text-white uppercase mt-40">
               Halo Infinite
           
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">S</span>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-blue-700">R</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#3c7dbe] to-[#648AB1]">S</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#648AB1] to-[#bcd7f0]">R</span>
               <span className="ml-1 text-sm text-white/50">v{verNum}</span>
         </motion.h1>
 
