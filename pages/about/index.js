@@ -5,7 +5,7 @@ const index = () => {
 
 
     const styles ={
-        listItem: "uppercase bg-slate-200/[.05] px-4 py-1 w-full text-sm text-center border border-slate-50/5 text-white/80 mb-2 border-b-indigo-500/50 hover:border-slate-50/40 hover:border-b-indigo-500/100 hover:border-x-slate-50/100 hover:bg-slate-200/40 transition duration-100 cursor-pointer",
+        listItem: "uppercase bg-slate-200/[.05] px-4 py-1 w-full text-sm text-center border border-slate-50/5 text-white/80 mb-2 border-b-indigo-500/50 hover:border-slate-50/40 hover:border-b-indigo-500/100 hover:border-x-slate-50/100 hover:bg-slate-200/40 transition duration-100",
       }
 
     const container = {
@@ -47,20 +47,18 @@ const index = () => {
 
                 <div className="my-16">
                     <h3 className="font-bold text-xl text-white mb-2 capitalize">gamer background</h3>
-                    <p className="text-white max-w-[600px] leading-relaxed">
-                        I&apos;ve played a lot of Halo growing up. It&apos;s easy to say that it&apos;s my favorite game. 
+                    <p className="text-white max-w-[600px] leading-loose">
+                        I&apos;ve played a lot of Halo growing up. It&apos;s easy to say that it&apos;s my favorite game.
                         Long story short, I made my own app for players to look up their service record stats.
                     </p>
                 </div>
 
                 <div>
                     <h4 className="text-xl capitalize font-bold text-white mb-2">as a developer</h4>
-                    <p className="text-white max-w-[600px] leading-relaxed">
+                    <p className="text-white max-w-[600px] leading-loose">
                         The app was designed to reflect on many years of gaming, but also to challenge me as a developer.
-                        For a project of this caliber. I decided to use a stack I was comfortable with.
-                        I saw the potential to animate stuff using framermotion and style it using tailwind.
-                        
-                    
+                        The scope was to create a simple, aesthetic yet powerful App with nice animations. Priority numero uno was page transitions.
+                        For that I used Framer motion, which is an incredible motion library for React. The rest is below.
                     </p>
                 </div>
 
