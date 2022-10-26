@@ -24,7 +24,7 @@ function playerId({
   return (
     <>
         <Head title={`Halo Infinite Stats | ${GT}`}/>
-        <div className="max-w-7xl mx-auto p-2 mt-7 min-h-[80vh]">
+        <div className="max-w-7xl mx-auto p-2 min-h-[80vh]">
           <motion.div
             initial={{opacity: 1}}
             animate={{opacity: 1}}
@@ -49,7 +49,7 @@ function playerId({
               initial={{opacity: 0, x: 10}}
               animate={{opacity: 1, x: 0}}
               transition={{duration: 1, delay: 1.5}}
-              className="absolute  right-2 top-7 md:right-10">
+              className="absolute right-2 top-7 md:right-10">
 
               <div className="flex flex-col items-center">
                 <span className="text-white text-xs lg:text-sm">Win rate</span>

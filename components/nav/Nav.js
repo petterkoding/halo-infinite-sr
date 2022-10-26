@@ -20,8 +20,7 @@ function Nav() {
   
 
   return (
-    <>
-    <nav className="h-20 w-full p-5 border-b border-b-[#648AB1] fixed top-0 z-[99999] bg-stone-900/80">
+    <nav className="h-20 w-full p-5 border-b border-b-[#648AB1] fixed top-0 z-[99999] bg-stone-900/20 backdrop-blur-sm">
         <div className="flex justify-between items-center max-w-7xl mx-auto">
             <div className="flex justify-start w-full max-w-md">
                 <Link href="/" passHref>
@@ -34,8 +33,6 @@ function Nav() {
             <div className="sm:text-1xl md:text-2xl font-bold text-white">infinite<span className="uppercase text-[#648AB1]">sr</span></div>
         </div>
     </nav>
-    <div className="h-[4rem]"></div>
-    </>
   )
 }
 

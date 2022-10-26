@@ -28,13 +28,13 @@ const index = () => {
   return (
     <>
         <Head title="Halo InfiniteSR | About"/>
-        <div className="w-full flex flex-col flex-start  max-w-7xl mx-auto px-2 mt-12">
+        <div className="w-full flex flex-col flex-start  max-w-7xl mx-auto px-2">
             <div className="w-full flex flex-col items-center flex-start h-auto">
                 <motion.h1
                     initial={{opacity: 0, y: 10}}
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 1}}
-                    className="text-4xl font-bold mb-4 text-white uppercase mt-32">
+                    className="text-4xl font-bold mb-4 text-white uppercase">
                         created by a player
                 </motion.h1>
                 <motion.h2
@@ -81,7 +81,7 @@ const index = () => {
                 </motion.ul>
 
 
-                <span className="text-xs text-gray-300 mt-32 block bg-stone-900/60 text-center border border-indigo-400">
+                <span className="text-xs text-gray-300 mt-32 block bg-stone-900/60 text-center border border-indigo-400 mb-20">
                     This is a work in progress and will evolve over time.
                 </span>
             </div>
