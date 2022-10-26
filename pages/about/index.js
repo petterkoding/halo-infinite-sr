@@ -49,7 +49,7 @@ const index = () => {
                     <h3 className="font-bold text-xl text-white mb-2 capitalize">gamer background</h3>
                     <p className="text-white max-w-[600px] leading-loose">
                         I&apos;ve played a lot of Halo growing up. It&apos;s easy to say that it&apos;s my favorite game.
-                        Long story short, I made my own app for players to look up their service record stats.
+                        Long story short, I made my own app for players to look up their multiplayer service record.
                     </p>
                 </div>
 

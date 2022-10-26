@@ -1,6 +1,6 @@
 ## Halo infinite SR
 
-Important notice! This service will be offline from November 2nd 2022.
+Important notice! This APP will no longer work from November 2nd 2022.
 
 The APP where players can look up their multiplayer service record.
 

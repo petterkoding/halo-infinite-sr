@@ -39,7 +39,7 @@ function playerId({
             animate={{opacity: 1, y: 0}}
             transition={{duration: 1.5, delay: 0.1}}
             className="opacity-0 flex flex-col justify-start mb-10
-            bg-[url('../public/infinite-splinter-desert.png')]
+            bg-[url('../public/infinite-splinter-desert.png')] bg-auto
             bg-no-repeat bg-top h-auto border-b border-b-slate-50/80 relative">
 
 

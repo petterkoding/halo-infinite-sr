@@ -5,7 +5,9 @@ const Layout = ({children}) => {
   return (
     <>
         <Nav/>
-          <main className="min-h-[calc(100vh-232px)] bg-[url('../public/halologo.png')] bg-no-repeat bg-center bg-contain bg-fixed">
+          <main className="min-h-[calc(100vh)]
+          bg-[url('../public/halologo.png')] bg-no-repeat bg-center bg-contain bg-fixed
+          ">
             {children}
           </main>
         <Footer/>
@@ -14,3 +16,5 @@ const Layout = ({children}) => {
 }
 
 export default Layout
+
+

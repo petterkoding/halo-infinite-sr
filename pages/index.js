@@ -33,6 +33,7 @@ export default function Home() {
           <SearchForm/>
         </div>
 
+
       </div>       
     </>
   )

@@ -33,7 +33,7 @@ const SearchForm = () => {
 
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="h-[65px]">
+        <form onSubmit={handleSubmit(onSubmit)} className="h-[65px] mb-12">
             <fieldset className="h-full">
                 <label htmlFor="searchForPlayer" className="text-white text-xs block">Search for Player</label>
                     <div className="flex flex-row items-center justify-between h-full">

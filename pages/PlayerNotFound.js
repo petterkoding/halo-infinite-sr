@@ -12,10 +12,10 @@ const PlayerNotFound = () => {
           <h1 className="text-3xl font-bold capitalize text-center">player not found</h1>
 
           <div className="mt-10 text-center">
-            <span className="bg-red-500/20 border border-red-700 px-4 py-2 text-red-800 inline-block mb-4 text-lg capitalize">
+            <span className="bg-red-500/20 border border-red-700 px-4 py-2 text-red-200 inline-block mb-4 text-sm lg:text-lg capitalize">
               error -
               Gamertag can&apos;t be found or doesn&apos;t exist
-              <ExclamationIcon className="w-6 h-6 inline ml-3"/>
+              <ExclamationIcon className="w-4 h-4 lg:w-6 lg:h-6 inline ml-3"/>
             </span>
           </div>
 
