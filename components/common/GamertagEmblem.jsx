@@ -9,7 +9,7 @@ const GamertagEmblem = ({gamertag}) => {
         animate={{opacity: 1, x:0}}
         transition={{duration: 1, delay: 1.5}}
         className="max-w-[240px] md:max-w-sm py-6 px-2 mb-16
-        bg-gradient-to-r from-emerald-600 to-teal-600 relative overflow-hidden">
+        bg-gradient-to-r from-[#6B7D46] to-[#8E996C] relative overflow-hidden">
         
         {/* emblem shine effect */}
         {/* slow large fx*/}

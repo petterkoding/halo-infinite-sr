@@ -39,9 +39,10 @@ function playerId({
             animate={{opacity: 1, y: 0}}
             transition={{duration: 1.5, delay: 0.1}}
             className="opacity-0 flex flex-col justify-start mb-12
-            bg-[url('../public/spartan.png')] bg-auto
+            bg-auto bg-john117
             bg-no-repeat bg-top h-auto border-b border-b-slate-50/80 relative">
 
+{/* bg-[url('../public/john.png')] */}
 
             <GamertagEmblem gamertag={GT}/>
 
