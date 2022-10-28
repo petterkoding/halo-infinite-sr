@@ -27,7 +27,7 @@ function playerId({
         <div className="max-w-7xl mx-auto p-2 min-h-[80vh]">
           <motion.div
             initial={{opacity: 1}}
-            animate={{opacity: 1}}
+            animate={{opacity: [1,1,0.5,0]}}
             transition={{duration: 4}}
             className="absolute left-[50%] pointer-events-none translate-y-[-36px] translate-x-[-38px]"
           >
@@ -38,7 +38,7 @@ function playerId({
             initial={{opacity: 0, y: 10}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 1.5, delay: 0.1}}
-            className="opacity-0 flex flex-col justify-start mb-10
+            className="opacity-0 flex flex-col justify-start mb-12
             bg-[url('../public/infinite-splinter-desert.png')] bg-auto
             bg-no-repeat bg-top h-auto border-b border-b-slate-50/80 relative">
 
@@ -49,9 +49,9 @@ function playerId({
               initial={{opacity: 0, x: 10}}
               animate={{opacity: 1, x: 0}}
               transition={{duration: 1, delay: 1.5}}
-              className="absolute right-2 top-7 md:right-10">
+              className="absolute right-2 top-0 md:right-10">
 
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col justify-start items-center">
                 <span className="text-white text-xs lg:text-sm">Win rate</span>
                 <div className="text-white font-bold text-2xl md:text-5xl block">{serviceRecord.data?.matches.win_rate.toFixed(2)}<span>%</span></div>
                 <span className="text-white text-xs lg:text-sm mt-2">Personal score</span>
