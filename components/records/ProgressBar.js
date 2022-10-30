@@ -8,7 +8,7 @@ const ProgressBar = ({name, p,  total}) => {
 
 
     const style = {
-        bar: `h-full flex items-center justify-end pr-2 bg-gradient-to-r from-[#9E7809] to-[#B7991C]`
+        bar: `h-full flex items-center justify-end pr-2 bg-gradient-to-r from-[#9E7809] to-[#D3C48D]`
     }
 
  

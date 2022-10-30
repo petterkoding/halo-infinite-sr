@@ -2,7 +2,7 @@ import {motion} from "framer-motion"
 
 const Matchmaking = ({matchesPlayed, wins, losses, draws }) => {
   return (
-    <div className="w-full h-auto py-2 px-2 mb-20 text-white text-2xl block bg-stone-900/80 border-t border-x border-sky-600 border-b border-b-slate-100/20">
+    <div className="w-full h-auto py-2 px-2 mb-10 text-white text-2xl block bg-stone-900/80 border-t border-x border-sky-600 border-b border-b-slate-100/20">
 
       <motion.h4
         initial={{opacity: 0, y: 5}}

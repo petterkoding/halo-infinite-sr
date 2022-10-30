@@ -1,14 +1,15 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-const Card = ({children, title, Icon, x, delay}) => {
+const CardScrollReveal = ({children, title, Icon, x}) => {
 
 
   return (
     <motion.div
       initial={{opacity: 0, x: x}}
-      animate={{opacity: 1, x: 0}}
-      transition={{duration: 1, delay: delay}}
+      whileInView={{opacity: 1, x: 0}}
+      viewport={{ once: true }}
+      transition={{duration: 1}}
       className="block group w-full max-w-[38rem] mb-5">
 
         <h3
@@ -26,4 +27,4 @@ const Card = ({children, title, Icon, x, delay}) => {
   )
 }
 
-export default Card
+export default CardScrollReveal

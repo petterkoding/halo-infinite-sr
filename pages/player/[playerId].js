@@ -1,22 +1,30 @@
 import React from 'react'
 import Head from '../../components/head/Head';
 import {LightningBoltIcon, SparklesIcon} from '@heroicons/react/solid'
-import {XCircleIcon, FireIcon} from '@heroicons/react/outline'
+import {XCircleIcon, ChartBarIcon} from '@heroicons/react/outline'
 import Table from '../../components/records/Table';
 import { motion } from 'framer-motion'
 import Loading from '../../components/common/Loading';
 import ProgressBar from '../../components/records/ProgressBar';
 import Matchmaking from '../../components/records/Matchmaking';
 import Card from '../../components/records/Card';
+import CardScrollReveal from '../../components/records/CardScrollReveal';
 import PlayerNotFound from '../PlayerNotFound';
 import GamertagEmblem from '../../components/common/GamertagEmblem';
+import Ranked from '../../components/records/Ranked';
 
 function playerId({
-  serviceRecord
+  serviceRecord,
+  rankedStats
 }) {
 
     const GT = serviceRecord?.additional?.parameters.gamertag
     const totalKills = serviceRecord?.data?.core.summary.kills
+
+    const ranked = rankedStats
+ 
+    const {total, win_rate, outcomes: {draws, losses, wins}} = ranked.data.matches
+    const {kda, kdr, summary: {kills, deaths, assists}} = ranked.data.core
 
 
     if(!GT || GT === undefined) return <PlayerNotFound/>
@@ -25,6 +33,9 @@ function playerId({
     <>
         <Head title={`Halo Infinite Stats | ${GT}`}/>
         <div className="max-w-7xl mx-auto p-2 min-h-[80vh]">
+
+      
+
           <motion.div
             initial={{opacity: 1}}
             animate={{opacity: 0}}
@@ -42,7 +53,7 @@ function playerId({
             bg-auto bg-john117
             bg-no-repeat bg-top h-auto border-b border-b-slate-50/80 relative">
 
-{/* bg-[url('../public/john.png')] */}
+
 
             <GamertagEmblem gamertag={GT}/>
 
@@ -91,15 +102,32 @@ function playerId({
             draws={serviceRecord?.data.matches?.outcomes.draws}
           />
 
+          <Ranked
+            match={{
+              total,
+              win_rate,
+              wins,
+              draws,
+              losses
+            }}
+
+            summary={{
+              kills,
+              deaths,
+              kda,
+              kdr,
+              assists,
+            }}/>
 
 
 
-          <Card title="Kills overall" Icon={FireIcon} x={-4} delay={0.8}>
+
+          <CardScrollReveal title="Kills overall" Icon={ChartBarIcon} x={-15}>
             <ProgressBar name="headshots" p={serviceRecord.data.core.breakdowns.kills.headshots} total={totalKills}/>
             <ProgressBar name="melee" p={serviceRecord.data.core.breakdowns.kills.melee} total={totalKills}/>
             <ProgressBar name="grenades" p={serviceRecord.data.core.breakdowns.kills.grenades} total={totalKills}/>
             <ProgressBar name="power weapons" p={serviceRecord.data.core.breakdowns.kills.power_weapons}  total={totalKills}/>
-          </Card>
+          </CardScrollReveal>
           
 
         </div>
@@ -125,11 +153,14 @@ export async function getServerSideProps(ctx){
     const params = ctx.query.playerId
 
     const SERVICE_RECORD = await fetch(`https://halo.api.stdlib.com/infinite@1.6.4/stats/players/service-record/multiplayer/matchmade/all/?gamertag=${params}`, options);
+    const RANKED_STATS = await fetch(`https://halo.api.stdlib.com/infinite@1.7.0/stats/players/service-record/multiplayer/matchmade/ranked/?gamertag=${params}`, options);
     
     const serviceRecord = await SERVICE_RECORD.json();
+    const rankedStats = await RANKED_STATS.json()
   
     return { props: {
-      serviceRecord
+      serviceRecord,
+      rankedStats
       }
     }
 }
