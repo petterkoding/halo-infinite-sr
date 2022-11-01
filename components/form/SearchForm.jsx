@@ -47,7 +47,7 @@ const SearchForm = () => {
                             {...register("searchForPlayer", { required:true, minLength: 1, maxLength: 15})}
                             />
                         <button
-                            aria-label="search for gamer stats"
+                            aria-label="searchbutton for player search"
                             className="px-6 ml-1 h-full border w-auto border-slate-50/20 bg-slate-200/30 text-white uppercase 
                             hover:bg-cyan-600/90 transition duration-200 ease-out">
                             go

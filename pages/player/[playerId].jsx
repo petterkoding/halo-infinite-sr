@@ -99,8 +99,6 @@ function playerId({
           <Ranked/>
 
 
-
-
           <CardScrollReveal title="Kills overall" Icon={ChartBarIcon} x={-15}>
             <ProgressBar name="headshots" p={serviceRecord.data.core.breakdowns.kills.headshots} total={totalKills}/>
             <ProgressBar name="melee" p={serviceRecord.data.core.breakdowns.kills.melee} total={totalKills}/>
