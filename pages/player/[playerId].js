@@ -15,17 +15,10 @@ import Ranked from '../../components/records/Ranked';
 
 function playerId({
   serviceRecord,
-  rankedStats
 }) {
 
     const GT = serviceRecord?.additional?.parameters.gamertag
     const totalKills = serviceRecord?.data?.core.summary.kills
-
-    const ranked = rankedStats
- 
-    const {total, win_rate, outcomes: {draws, losses, wins}} = ranked.data.matches
-    const {kda, kdr, summary: {kills, deaths, assists}} = ranked.data.core
-
 
     if(!GT || GT === undefined) return <PlayerNotFound/>
     
@@ -95,6 +88,7 @@ function playerId({
 
           </motion.div>
 
+
           <Matchmaking
             matchesPlayed={serviceRecord?.data.matches.total}
             wins={serviceRecord?.data.matches?.outcomes.wins}
@@ -102,22 +96,7 @@ function playerId({
             draws={serviceRecord?.data.matches?.outcomes.draws}
           />
 
-          <Ranked
-            match={{
-              total,
-              win_rate,
-              wins,
-              draws,
-              losses
-            }}
-
-            summary={{
-              kills,
-              deaths,
-              kda,
-              kdr,
-              assists,
-            }}/>
+          <Ranked/>
 
 
 
@@ -153,14 +132,11 @@ export async function getServerSideProps(ctx){
     const params = ctx.query.playerId
 
     const SERVICE_RECORD = await fetch(`https://halo.api.stdlib.com/infinite@1.6.4/stats/players/service-record/multiplayer/matchmade/all/?gamertag=${params}`, options);
-    const RANKED_STATS = await fetch(`https://halo.api.stdlib.com/infinite@1.7.0/stats/players/service-record/multiplayer/matchmade/ranked/?gamertag=${params}`, options);
     
     const serviceRecord = await SERVICE_RECORD.json();
-    const rankedStats = await RANKED_STATS.json()
   
     return { props: {
       serviceRecord,
-      rankedStats
       }
     }
 }

@@ -1,7 +1,9 @@
 import Head from "../../components/head/Head"
 import {motion} from 'framer-motion'
 
+
 const index = () => {
+  
 
 
     const styles ={
@@ -52,6 +54,7 @@ const index = () => {
                         Long story short, I made my own app for players to look up their multiplayer service record.
                     </p>
                 </div>
+
 
                 <div>
                     <h4 className="text-xl capitalize font-bold text-white mb-2">as a developer</h4>

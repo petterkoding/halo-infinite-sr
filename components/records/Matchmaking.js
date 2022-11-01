@@ -9,7 +9,7 @@ const Matchmaking = ({matchesPlayed, wins, losses, draws }) => {
         animate={{opacity: 1, y: 0}}
         transition={{duration: 0.8, delay: 1}}
         className="text-white text-2xl w-full">
-          Matches
+          All Matches
       </motion.h4>
 
       <div className="flex flex-row justify-between border-t border-slate-50/70 overflow-hidden">
@@ -18,7 +18,7 @@ const Matchmaking = ({matchesPlayed, wins, losses, draws }) => {
           initial={{opacity: 0, y: -15}}
           animate={{opacity: 1, y: 0}}
           transition={{duration: 0.8, delay: 0.5}}
-          className="pr-2 border-r border-[#648AB1] bg-gradient-to-r from-blue-800/80 to-cyan-500/30 w-full p-1">
+          className="pr-2 border-r border-[#648AB1] bg-gradient-to-r from-cyan-500/50 to-blue-800/80 w-full p-1">
           <span className="capitalize text-white text-sm md:text-lg">played</span>
           <span className="block text-white ml-8 text-xl md:text-3xl">{matchesPlayed}</span>
         </motion.div>
@@ -27,7 +27,7 @@ const Matchmaking = ({matchesPlayed, wins, losses, draws }) => {
           initial={{opacity: 0, y: -15}}
           animate={{opacity: 1, y: 0}}
           transition={{duration: 0.85, delay: 0.6}}
-          className="pr-2 border-r border-[#648AB1] bg-gradient-to-r from-cyan-500/30 to-indigo-600/70 w-full p-1">
+          className="pr-2 border-r border-[#648AB1] bg-gradient-to-r from-blue-800/80  to-indigo-600/70 w-full p-1">
           <span className="capitalize text-white text-sm md:text-lg">wins</span>
           <span className="block text-white ml-8 text-xl md:text-3xl">{wins}</span>
         </motion.div>

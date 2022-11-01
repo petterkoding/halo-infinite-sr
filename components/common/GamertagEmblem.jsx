@@ -27,7 +27,7 @@ const GamertagEmblem = ({gamertag}) => {
         className="absolute w-[170%] h-2 left-[-40%] top-0 bg-emerald-100/50 z-[10] blur-lg"/>
 
             <span className="text-white/80 text-xs ml-2">player</span>
-            <h1 className="text-2xl md:text-6xl text-[#e9e4d4] uppercase font-bold relative z-[100]">{gamertag}</h1>
+            <h1 className="text-2xl md:text-5xl text-[#e9e4d4] uppercase font-bold relative z-[100]">{gamertag}</h1>
 
     </motion.div>
   )
