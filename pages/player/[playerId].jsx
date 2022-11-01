@@ -10,7 +10,7 @@ import Matchmaking from '../../components/records/Matchmaking';
 import Card from '../../components/records/Card';
 import CardScrollReveal from '../../components/records/CardScrollReveal';
 import PlayerNotFound from '../PlayerNotFound';
-import GamertagEmblem from '../../components/common/GamertagEmblem';
+import GamertagEmblem from '../../components/records/GamertagEmblem';
 import Ranked from '../../components/records/Ranked';
 
 function playerId({

@@ -1,6 +1,6 @@
 export const deployedVersion = 2;
 
-export const patch = 0;
+export const patch = 1;
 
 export const author = "Petter Iversen"
 

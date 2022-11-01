@@ -38,9 +38,10 @@ const SearchForm = () => {
                 <label htmlFor="searchForPlayer" className="text-white text-xs block">Search for Player</label>
                     <div className="flex flex-row items-center justify-between h-full">
                         <input
+                            aria-label='input search by xbox live gamertag'
                             maxLength={15}
                             type="text"
-                            name="searchForPlayer"
+                            id="searchForPlayer"
                             className={styles.input}
                             placeholder="Enter Gamertag"
                             {...register("searchForPlayer", { required:true, minLength: 1, maxLength: 15})}
