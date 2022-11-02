@@ -18,11 +18,14 @@ const SearchForm = () => {
     }
 
     const onSubmit = ({searchForPlayer}) => {
+
+        const prettyUrl = searchForPlayer.replace(/\s/g, "-")
+                
         setIsSearching(true) 
         router.push({
             pathname: `/player/[gamertag]`,
             query: { 
-                gamertag: searchForPlayer,
+                gamertag: prettyUrl,
             }
         })
         

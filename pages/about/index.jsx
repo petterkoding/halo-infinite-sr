@@ -48,9 +48,9 @@ const index = () => {
                 </motion.h2>
 
                 <div className="my-16">
-                    <h3 className="font-bold text-xl text-white mb-2 capitalize">gamer background</h3>
+                    <h3 className="font-bold text-xl text-white mb-2 capitalize">gaming background</h3>
                     <p className="text-white max-w-[600px] leading-loose">
-                        I&apos;ve played a lot of Halo growing up. It&apos;s easy to say that it&apos;s my favorite game.
+                        I&apos;ve played a lot of Halo growing up. It&apos;s easy to say that it&apos;s my favorite game of all time.
                         Long story short, I made my own app for players to look up their multiplayer service record.
                     </p>
                 </div>
@@ -60,8 +60,10 @@ const index = () => {
                     <h4 className="text-xl capitalize font-bold text-white mb-2">as a developer</h4>
                     <p className="text-white max-w-[600px] leading-loose">
                         The app was designed to reflect on many years of gaming, but also to challenge me as a developer.
-                        The scope was to create a simple, aesthetic yet powerful App with nice animations. Priority numero uno was page transitions.
-                        For that I used Framer motion, which is an incredible motion library for React. The rest is below.
+                        The scope was to create a simple, aesthetic yet powerful App with nice animations.
+                        <br/>
+                        Highest priority was page transitions. I used Framer motion, which is an incredible motion library for React.
+                        The rest of the stack is below.
                     </p>
                 </div>
 
